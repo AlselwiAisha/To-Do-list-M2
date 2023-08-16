@@ -16,7 +16,7 @@
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Task)\n/* harmony export */ });\nclass Task {\r\n  constructor(index, description) {\r\n    this.index = index;\r\n    this.description = description;\r\n    this.completed = false;\r\n  }\r\n}\n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/task.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Task)\n/* harmony export */ });\nclass Task {\n  constructor(index, description) {\n    this.index = index;\n    this.description = description;\n    this.completed = false;\n  }\n}\n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/task.js?");
 
 /***/ })
 
