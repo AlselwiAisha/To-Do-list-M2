@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: antiquewhite;
+    background-color: rgb(28, 160, 237);
 }
 
 .main-container{
@@ -15,14 +15,17 @@ body{
 }
 
 .container{
-    width: 60%;
+    width: 50%;
     margin: 10%;
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border: 1px solid white;
-    background-color: rgba(240, 248, 255, 0.693);
+    border-radius: 20px;
+    background-color: rgba(210, 233, 255);
+    box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
 }
 .title{
     width: 100%;
@@ -35,15 +38,17 @@ body{
 
 h1{
     font-size: 30px;
-    color: rgb(61, 15, 15);
+    margin: 10px;
+    color: #000;
 }
 .list-title,
 .add-new{
     width: 98%;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+border-bottom: 0.5px solid rgb(140, 140, 140);
 }
 .addnewdo{
     width: 100%;
@@ -75,5 +80,22 @@ li{
     display: flex;
 justify-content: space-between;
 align-items: center;
-border: 0.5px solid rgb(94, 93, 93);
+border-bottom: 0.5px solid rgb(140, 140, 140);
+}
+#clear-btn{
+    width: 100%;
+    border: none;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+}
+.icon{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.icon:hover{
+    opacity: 1;
 }
