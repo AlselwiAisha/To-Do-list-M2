@@ -17,16 +17,12 @@ export function renderToDoList(taskList) {
   taskList.forEach((task) => {
     const liElement = document.createElement('li');
     let isChecked = 'unchecked';
-    if (task.completed) {
-      isChecked = 'checked';
-      liElement.style.textDecoration = 'line-through';
-    }
     liElement.innerHTML = `
         <div>
             <input type="checkbox" ${isChecked}>
             ${task.description}
         </div>
-        <i class="fa fa-trash" aria-hidden="true"></i>
+        <i class="fa fa-trash icon" aria-hidden="true"></i>
         `;
     ulElement.appendChild(liElement);
   });
