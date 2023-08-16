@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(2, 114, 179);
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 50%;
+  margin: 10%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: rgb(228, 240, 251);
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 10px;
+  color: #000;
+}
+
+.list-title,
+.add-new {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgb(140, 140, 140);
+}
+
+.addnewdo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#add-new-input {
+  width: 90%;
+  font-size: 15px;
+  padding: 10px;
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+#add-btn {
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
+}
+
+.list {
+  width: 100%;
+}
+
+li {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgb(140, 140, 140);
+}
+
+#clear-btn {
+  width: 100%;
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.icon {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 1;
+}
