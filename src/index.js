@@ -1,9 +1,9 @@
 import './style.css';
 import ToDo from './modules/listfuns.js';
 
-const newtodo=document.querySelector('#add-new-input');
-const addBtn=document.querySelector('#add-btn');
-const clearBtn=document.querySelector('#clear-btn');
+const newtodo = document.querySelector('#add-new-input');
+const addBtn = document.querySelector('#add-btn');
+const clearBtn = document.querySelector('#clear-btn');
 const todo = new ToDo();
 
 newtodo.addEventListener('keyup', (e) => {
@@ -28,9 +28,9 @@ addBtn.addEventListener('click', (e) => {
 clearBtn.addEventListener('click', () => todo.clearAllCompleted());
 
 window.onload = () => {
- todo.todoList = JSON.parse(localStorage.getItem('todo-list')) || [];
+  todo.todoList = JSON.parse(localStorage.getItem('todo-list')) || [];
 
- if (todo.todoList.length > 0) {
+  if (todo.todoList.length > 0) {
     todo.todoList.forEach((task) => todo.renderTask(task));
   }
 };

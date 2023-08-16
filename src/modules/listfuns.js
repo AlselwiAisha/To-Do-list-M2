@@ -21,9 +21,9 @@ export default class ToDo {
         `;
     addEventListeners(liElement, this);
     liElement.querySelector('.completed-checkbox').checked = task.completed;
-   
+
     document.querySelector('#list').appendChild(liElement);
-     liElement.querySelector('.task-description').style.textDecoration = task.completed ? 'line-through' : 'none';
+    liElement.querySelector('.task-description').style.textDecoration = task.completed ? 'line-through' : 'none';
   }
 
   updateIndexes() {
@@ -33,7 +33,7 @@ export default class ToDo {
         item.querySelector('.task-description').setAttribute('name', index + 1);
       });
 
-      this.todoList.forEach((task, index) => {
+    this.todoList.forEach((task, index) => {
       task.index = index + 1;
     });
   }
@@ -46,22 +46,20 @@ export default class ToDo {
   }
 
   removeTask(liElement) {
-   const taskIndex = liElement.value - 1;
-   this.todoList.splice(taskIndex, 1);
-   liElement.remove();
-   this.updateIndexes();
-   localStorage.setItem('todo-list', JSON.stringify(this.todoList));
+    const taskIndex = liElement.value - 1;
+    this.todoList.splice(taskIndex, 1);
+    liElement.remove();
+    this.updateIndexes();
+    localStorage.setItem('todo-list', JSON.stringify(this.todoList));
   }
 
-
-
   updateTask(liElement) {
-   const taskDesc = liElement.querySelector('.task-description').value;
-   const chkState = liElement.querySelector('.completed-checkbox').checked;
-   const taskIndex = liElement.value - 1;
-   this.todoList[taskIndex].description = taskDesc;
-   this.todoList[taskIndex].completed = chkState;
-   localStorage.setItem('todo-list', JSON.stringify(this.todoList));
+    const taskDesc = liElement.querySelector('.task-description').value;
+    const chkState = liElement.querySelector('.completed-checkbox').checked;
+    const taskIndex = liElement.value - 1;
+    this.todoList[taskIndex].description = taskDesc;
+    this.todoList[taskIndex].completed = chkState;
+    localStorage.setItem('todo-list', JSON.stringify(this.todoList));
   }
 
   clearAllCompleted() {
@@ -75,5 +73,4 @@ export default class ToDo {
     this.updateIndexes();
     localStorage.setItem('todo-list', JSON.stringify(this.todoList));
   }
-
 }

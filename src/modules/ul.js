@@ -1,7 +1,7 @@
 export default function addEventListeners(liElement, todoObj) {
-  const dscr= liElement.querySelector('.task-description');
-  const checkbox= liElement.querySelector('.completed-checkbox');
-  const trash=liElement.querySelector('.trash-icon');
+  const dscr = liElement.querySelector('.task-description');
+  const checkbox = liElement.querySelector('.completed-checkbox');
+  const trash = liElement.querySelector('.trash-icon');
 
   checkbox.addEventListener('change', function () {
     dscr.style.textDecoration = this.checked ? 'line-through' : 'none';
@@ -9,13 +9,13 @@ export default function addEventListeners(liElement, todoObj) {
   });
 
   dscr.addEventListener('focus', function () {
-   liElement.style.backgroundColor = '#ffeea8';
+    liElement.style.backgroundColor = '#ffeea8';
     this.style.cursor = 'text';
   });
 
   dscr.addEventListener('focusout', function () {
-     liElement.style.backgroundColor = 'transparent';
-     this.style.cursor = 'default';
+    liElement.style.backgroundColor = 'transparent';
+    this.style.cursor = 'default';
     if (this.value.trim() === '') {
       todoObj.removeTask(liElement);
     } else {
@@ -29,8 +29,7 @@ export default function addEventListeners(liElement, todoObj) {
     }
   });
 
-   trash.addEventListener('click', () => {
+  trash.addEventListener('click', () => {
     todoObj.removeTask(liElement);
   });
-
 }
