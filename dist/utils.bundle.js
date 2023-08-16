@@ -10,51 +10,20 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/modules/task.js":
-/*!*****************************!*\
-  !*** ./src/modules/task.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Task)\n/* harmony export */ });\nclass Task {\n  constructor(index, description) {\n    this.index = index;\n    this.description = description;\n    this.completed = false;\n  }\n}\n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/task.js?");
-
-/***/ }),
-
 /***/ "./src/modules/ul.js":
 /*!***************************!*\
   !*** ./src/modules/ul.js ***!
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createToDoList: () => (/* binding */ createToDoList),\n/* harmony export */   renderToDoList: () => (/* binding */ renderToDoList)\n/* harmony export */ });\n/* harmony import */ var _task_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./task.js */ \"./src/modules/task.js\");\n\n\nfunction createToDoList() {\n  const todoList = [];\n\n  for (let i = 0; i < 5; i += 1) {\n    if (i === 1) todoList.push(new _task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](i, ` To Do ${i + 1}`, true));\n    else todoList.push(new _task_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](i, `To Do ${i + 1}`, false));\n  }\n\n  return (todoList);\n}\n\nfunction renderToDoList(taskList) {\n  const ulElement = document.createElement('ul');\n\n  taskList.forEach((task) => {\n    const liElement = document.createElement('li');\n    const isChecked = 'unchecked';\n    liElement.innerHTML = `\n        <div>\n            <input type=\"checkbox\" ${isChecked}>\n            ${task.description}\n        </div>\n        <i class=\"fa fa-trash icon\" aria-hidden=\"true\"></i>\n        `;\n    ulElement.appendChild(liElement);\n  });\n\n  return ulElement;\n}\n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/ul.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ addEventListeners)\n/* harmony export */ });\nfunction addEventListeners(liElement, todoObj) {\n  const dscr= liElement.querySelector('.task-description');\n  const checkbox= liElement.querySelector('.completed-checkbox');\n  const trash=liElement.querySelector('.trash-icon');\n\n  checkbox.addEventListener('change', function () {\n    dscr.style.textDecoration = this.checked ? 'line-through' : 'none';\n    todoObj.updateTask(liElement);\n  });\n\n  dscr.addEventListener('focus', function () {\n   liElement.style.backgroundColor = '#ffeea8';\n    this.style.cursor = 'text';\n  });\n\n  dscr.addEventListener('focusout', function () {\n     liElement.style.backgroundColor = 'transparent';\n     this.style.cursor = 'default';\n    if (this.value.trim() === '') {\n      todoObj.removeTask(liElement);\n    } else {\n      todoObj.updateTask(liElement);\n    }\n  });\n\n  dscr.addEventListener('keydown', (e) => {\n    if (e.keyCode === 13) {\n      e.target.blur();\n    }\n  });\n\n   trash.addEventListener('click', () => {\n    todoObj.removeTask(liElement);\n  });\n\n}\n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/ul.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
@@ -90,7 +59,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/modules/ul.js");
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/modules/ul.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
