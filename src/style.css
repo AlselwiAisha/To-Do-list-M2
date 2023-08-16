@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: antiquewhite;
+}
+
+.main-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 60%;
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    background-color: rgba(240, 248, 255, 0.693);
+}
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+h1{
+    font-size: 30px;
+    color: rgb(61, 15, 15);
+}
+.list-title,
+.add-new{
+    width: 98%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addnewdo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#add-new-input{
+    width: 90%;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+#add-btn{
+    background-color:  rgba(240, 248, 255, 0);
+    border: none;
+}
+.list{
+    width: 100%;
+}
+li{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+justify-content: space-between;
+align-items: center;
+border: 0.5px solid rgb(94, 93, 93);
+}
