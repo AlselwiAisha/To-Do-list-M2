@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(28, 160, 237);
+    background-color: rgb(2, 114, 179);
 }
 
 .main-container{
@@ -24,7 +24,7 @@ body{
     flex-direction: column;
     border: 1px solid white;
     border-radius: 20px;
-    background-color: rgba(210, 233, 255);
+    background-color: rgb(228, 240, 251);
     box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
 }
 .title{
