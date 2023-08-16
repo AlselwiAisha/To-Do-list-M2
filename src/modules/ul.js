@@ -16,7 +16,7 @@ export function renderToDoList(taskList) {
 
   taskList.forEach((task) => {
     const liElement = document.createElement('li');
-    let isChecked = 'unchecked';
+    const isChecked = 'unchecked';
     liElement.innerHTML = `
         <div>
             <input type="checkbox" ${isChecked}>
