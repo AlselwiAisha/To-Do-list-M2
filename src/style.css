@@ -42,23 +42,23 @@ h1 {
   padding: 10px;
   text-align: center;
   background-color: rgb(190, 224, 255);
-  border-radius:20px 20px 0 0 ;
+  border-radius: 20px 20px 0 0;
 }
 
 .list-title,
 .add-new {
   width: 98%;
   display: flex;
- 
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.5px solid rgb(140, 140, 140);
 }
-.list-title{
-   padding-top: 10px;
-   padding-bottom: 10px;
 
-  }
+.list-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .addnewdo {
   width: 100%;
   display: flex;
@@ -107,9 +107,9 @@ li {
   border-radius: 0 0 20px 20px;
 }
 
-#clear-btn:hover{
+#clear-btn:hover {
   font-weight: bold;
-  color: rgb(2, 88, 138); ;
+  color: rgb(2, 88, 138);
 }
 
 .icon {

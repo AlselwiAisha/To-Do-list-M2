@@ -6,7 +6,7 @@ export default class ToDo {
     this.todoList = [];
   }
 
-  /*-------------Function to create list in html file------------*/
+  /* -------------Function to create list in html file------------*/
   renderTask(task) {
     const liElement = document.createElement('li');
     liElement.classList.add('draggable-item');
@@ -20,7 +20,7 @@ export default class ToDo {
        </div>
         <i class="fa fa-trash icon trash-icon" aria-hidden="true"></i>
         `;
-  /*-----------Call function to add all events to buttons in list---------*/
+    /* -----------Call function to add all events to buttons in list---------*/
     addEventListeners(liElement, this);
 
     liElement.querySelector('.completed-checkbox').checked = task.completed;
@@ -28,19 +28,19 @@ export default class ToDo {
     liElement.querySelector('.task-description').style.textDecoration = task.completed ? 'line-through' : 'none';
   }
 
-  /*----------Function to update indexes after remove data----------*/
+  /* ----------Function to update indexes after remove data----------*/
   updateIndexes() {
     document.querySelectorAll('.draggable-item')
       .forEach((item, index) => {
         item.setAttribute('value', index + 1);
         item.querySelector('.task-description').setAttribute('name', index + 1);
       });
-      this.todoList.forEach((task, index) => {
+    this.todoList.forEach((task, index) => {
       task.index = index + 1;
     });
   }
 
-  /*----------Function to add new to-do ----------*/
+  /* ----------Function to add new to-do ----------*/
   addTask(description) {
     const task = new Task(this.todoList.length + 1, description);
     this.todoList.push(task);
@@ -48,29 +48,29 @@ export default class ToDo {
     this.renderTask(task);
   }
 
-  /*-----------Function to remove item from to-do list---------*/
+  /* -----------Function to remove item from to-do list---------*/
   removeTask(liElement) {
     const taskIndex = liElement.value - 1;
     this.todoList.splice(taskIndex, 1);
     liElement.remove();
-    
-    /*---call function to update indexes---*/
+
+    /* ---call function to update indexes---*/
     this.updateIndexes();
     localStorage.setItem('todo-list', JSON.stringify(this.todoList));
   }
 
-  /*-----------function to update a task----------*/
+  /* -----------function to update a task----------*/
   updateTask(liElement) {
     const taskDesc = liElement.querySelector('.task-description').value;
     const chkState = liElement.querySelector('.completed-checkbox').checked;
     const taskIndex = liElement.value - 1;
     this.todoList[taskIndex].description = taskDesc;
     this.todoList[taskIndex].completed = chkState;
-    /*---------Update the task in localStorage----------*/
+    /* ---------Update the task in localStorage----------*/
     localStorage.setItem('todo-list', JSON.stringify(this.todoList));
   }
 
-  /*------------remove all completed tasks---------------*/
+  /* ------------remove all completed tasks---------------*/
   clearAllCompleted() {
     this.todoList = this.todoList.filter((task) => !task.completed);
     document.querySelectorAll('.draggable-item').forEach((item) => {
@@ -79,10 +79,10 @@ export default class ToDo {
       }
     });
 
-     /*---call function to update indexes---*/
+    /* ---call function to update indexes---*/
     this.updateIndexes();
 
-     /*------------Remove all completed tasks---------------*/
+    /* ------------Remove all completed tasks---------------*/
     localStorage.setItem('todo-list', JSON.stringify(this.todoList));
   }
 }
