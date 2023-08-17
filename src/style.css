@@ -18,7 +18,6 @@ body {
 .container {
   width: 50%;
   margin: 10%;
-  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,9 +37,12 @@ body {
 }
 
 h1 {
+  width: 100%;
   font-size: 30px;
-  margin: 10px;
-  color: #000;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(190, 224, 255);
+  border-radius: 20px 20px 0 0;
 }
 
 .list-title,
@@ -50,6 +52,11 @@ h1 {
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.5px solid rgb(140, 140, 140);
+}
+
+.list-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .addnewdo {
@@ -96,7 +103,13 @@ li {
   padding: 10px;
   outline: none;
   cursor: pointer;
-  background: transparent;
+  background-color: rgb(190, 224, 255);
+  border-radius: 0 0 20px 20px;
+}
+
+#clear-btn:hover {
+  font-weight: bold;
+  color: rgb(2, 88, 138);
 }
 
 .icon {
@@ -106,10 +119,6 @@ li {
 
 .icon:hover {
   opacity: 1;
-}
-
-.completed-checkbox {
-  margin: 0 !important;
 }
 
 .task-description {

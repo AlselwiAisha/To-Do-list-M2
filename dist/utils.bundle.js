@@ -16,14 +16,45 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ addEventListeners)\n/* harmony export */ });\nfunction addEventListeners(liElement, todoObj) {\n  const dscr = liElement.querySelector('.task-description');\n  const checkbox = liElement.querySelector('.completed-checkbox');\n  const trash = liElement.querySelector('.trash-icon');\n\n  checkbox.addEventListener('change', function () {\n    dscr.style.textDecoration = this.checked ? 'line-through' : 'none';\n    todoObj.updateTask(liElement);\n  });\n\n  dscr.addEventListener('focus', function () {\n    liElement.style.backgroundColor = '#ffeea8';\n    this.style.cursor = 'text';\n  });\n\n  dscr.addEventListener('focusout', function () {\n    liElement.style.backgroundColor = 'transparent';\n    this.style.cursor = 'default';\n    if (this.value.trim() === '') {\n      todoObj.removeTask(liElement);\n    } else {\n      todoObj.updateTask(liElement);\n    }\n  });\n\n  dscr.addEventListener('keydown', (e) => {\n    if (e.keyCode === 13) {\n      e.target.blur();\n    }\n  });\n\n  trash.addEventListener('click', () => {\n    todoObj.removeTask(liElement);\n  });\n}\n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/ul.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ addEventListeners)\n/* harmony export */ });\n/* harmony import */ var _updatefun_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./updatefun.js */ \"./src/modules/updatefun.js\");\n/* ---------- function to add all events to buttons in list---------*/\r\n\r\nfunction addEventListeners(liElement, todoObj,todoList) {\r\n  const dscr = liElement.querySelector('.task-description');\r\n  const checkbox = liElement.querySelector('.completed-checkbox');\r\n  const trash = liElement.querySelector('.trash-icon');\r\n\r\n  /* -----------Event when checke change-----------*/\r\n  checkbox.addEventListener('change', function () {\r\n    dscr.style.textDecoration = this.checked ? 'line-through' : 'none';\r\n    (0,_updatefun_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(liElement,todoList);\r\n  });\r\n\r\n  /* -----------Event when user need to update task-----------*/\r\n  dscr.addEventListener('focus', function () {\r\n    liElement.style.backgroundColor = '#ffeea8';\r\n    this.style.cursor = 'text';\r\n  });\r\n\r\n  /* ----------Event when user completes update task-----------*/\r\n  dscr.addEventListener('focusout', function () {\r\n    liElement.style.backgroundColor = 'transparent';\r\n    this.style.cursor = 'default';\r\n    if (this.value.trim() === '') {\r\n      todoObj.removeTask(liElement);\r\n    } else {\r\n      (0,_updatefun_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(liElement,todoList);\r\n    }\r\n  });\r\n\r\n  dscr.addEventListener('keydown', (e) => {\r\n    if (e.keyCode === 13) {\r\n      e.target.blur();\r\n    }\r\n  });\r\n\r\n  /* ----------Event when user clicks remove button-----------*/\r\n  trash.addEventListener('click', () => {\r\n    todoObj.removeTask(liElement);\r\n  });\r\n}\n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/ul.js?");
+
+/***/ }),
+
+/***/ "./src/modules/updatefun.js":
+/*!**********************************!*\
+  !*** ./src/modules/updatefun.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ updateTask)\n/* harmony export */ });\n  /* -----------function to update a task----------*/\r\n function updateTask(liElement,todoList) {\r\n    const taskDesc = liElement.querySelector('.task-description').value;\r\n    const chkState = liElement.querySelector('.completed-checkbox').checked;\r\n    const taskIndex = liElement.value - 1;\r\n    todoList[taskIndex].description = taskDesc;\r\n    todoList[taskIndex].completed = chkState;\r\n    /* ---------Update the task in localStorage----------*/\r\n    localStorage.setItem('todo-list', JSON.stringify(todoList));\r\n  }\r\n\r\n  \n\n//# sourceURL=webpack://to-do-list-m2/./src/modules/updatefun.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The require scope
-/******/ 	var __webpack_require__ = {};
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
@@ -59,8 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/modules/ul.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/modules/ul.js");
 /******/ 	
 /******/ })()
 ;
