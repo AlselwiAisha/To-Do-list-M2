@@ -6,6 +6,7 @@ const addBtn = document.querySelector('#add-btn');
 const clearBtn = document.querySelector('#clear-btn');
 const todo = new ToDo();
 
+/*----------Add new when user press enter---------*/
 newtodo.addEventListener('keyup', (e) => {
   e.preventDefault();
 
@@ -15,22 +16,23 @@ newtodo.addEventListener('keyup', (e) => {
   }
 });
 
+/*----------Add new when user press the icon---------*/
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   if (newtodo.value.trim() !== '') {
     todo.addTask(newtodo.value);
   }
-
   newtodo.value = '';
 });
 
+/*----------- clear all completed from to-do list -----------*/
 clearBtn.addEventListener('click', () => todo.clearAllCompleted());
 
+/*----------When page opens get to-do list data from localStorage---------------*/
 window.onload = () => {
   todo.todoList = JSON.parse(localStorage.getItem('todo-list')) || [];
-
-  if (todo.todoList.length > 0) {
+ if (todo.todoList.length > 0) {
     todo.todoList.forEach((task) => todo.renderTask(task));
   }
 };
