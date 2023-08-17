@@ -1,5 +1,7 @@
 /* ---------- function to add all events to buttons in list---------*/
-export default function addEventListeners(liElement, todoObj) {
+import updateTask from './updatefun.js';
+
+export default function addEventListeners(liElement, todoObj, todoList) {
   const dscr = liElement.querySelector('.task-description');
   const checkbox = liElement.querySelector('.completed-checkbox');
   const trash = liElement.querySelector('.trash-icon');
@@ -7,7 +9,7 @@ export default function addEventListeners(liElement, todoObj) {
   /* -----------Event when checke change-----------*/
   checkbox.addEventListener('change', function () {
     dscr.style.textDecoration = this.checked ? 'line-through' : 'none';
-    todoObj.updateTask(liElement);
+    updateTask(liElement, todoList);
   });
 
   /* -----------Event when user need to update task-----------*/
@@ -23,7 +25,7 @@ export default function addEventListeners(liElement, todoObj) {
     if (this.value.trim() === '') {
       todoObj.removeTask(liElement);
     } else {
-      todoObj.updateTask(liElement);
+      updateTask(liElement, todoList);
     }
   });
 
