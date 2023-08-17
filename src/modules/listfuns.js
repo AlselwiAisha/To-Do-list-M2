@@ -21,7 +21,7 @@ export default class ToDo {
         <i class="fa fa-trash icon trash-icon" aria-hidden="true"></i>
         `;
     /* -----------Call function to add all events to buttons in list---------*/
-    addEventListeners(liElement, this);
+    addEventListeners(liElement, this, this.todoList);
 
     liElement.querySelector('.completed-checkbox').checked = task.completed;
     document.querySelector('#list').appendChild(liElement);
@@ -56,17 +56,6 @@ export default class ToDo {
 
     /* ---call function to update indexes---*/
     this.updateIndexes();
-    localStorage.setItem('todo-list', JSON.stringify(this.todoList));
-  }
-
-  /* -----------function to update a task----------*/
-  updateTask(liElement) {
-    const taskDesc = liElement.querySelector('.task-description').value;
-    const chkState = liElement.querySelector('.completed-checkbox').checked;
-    const taskIndex = liElement.value - 1;
-    this.todoList[taskIndex].description = taskDesc;
-    this.todoList[taskIndex].completed = chkState;
-    /* ---------Update the task in localStorage----------*/
     localStorage.setItem('todo-list', JSON.stringify(this.todoList));
   }
 
