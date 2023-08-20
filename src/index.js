@@ -1,6 +1,5 @@
 import './style.css';
 import ToDo from './modules/listfuns.js';
-import enableDragSort from './modules/dragdrop.js';
 
 const newtodo = document.querySelector('#add-new-input');
 const addBtn = document.querySelector('#add-btn');
