@@ -1,5 +1,6 @@
 import './style.css';
 import ToDo from './modules/listfuns.js';
+import enableDragSort from './modules/dragdrop.js';
 
 const newtodo = document.querySelector('#add-new-input');
 const addBtn = document.querySelector('#add-btn');
@@ -35,4 +36,5 @@ window.onload = () => {
   if (todo.todoList.length > 0) {
     todo.todoList.forEach((task) => todo.renderTask(task));
   }
+  // (()=> {enableDragSort('drag-sort-enable',todo.todoList)})();
 };

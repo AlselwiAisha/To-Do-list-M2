@@ -1,5 +1,5 @@
 /* ---------- function to add all events to buttons in list---------*/
-import updateTask from './updatefun.js';
+import { updateTask } from './updatefun.js';
 
 export default function addEventListeners(liElement, todoObj, todoList) {
   const dscr = liElement.querySelector('.task-description');
