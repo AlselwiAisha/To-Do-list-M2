@@ -21,10 +21,6 @@ export function updateList() {
     };
     todo.push(opj);
   });
-
-  //   todoList.forEach((task, index) => {
-  //   task.index = index + 1;
-  //  });
   /* ---------Update the task in localStorage----------*/
   localStorage.setItem('todo-list', JSON.stringify(todo));
 }
