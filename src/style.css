@@ -136,3 +136,14 @@ li {
 .no-strike {
   text-decoration: none;
 }
+
+li.drag-sort-active {
+  background: transparent;
+  color: transparent;
+  border: 1px solid #4ca1af;
+}
+
+span.drag-sort-active {
+  background: transparent;
+  color: transparent;
+}

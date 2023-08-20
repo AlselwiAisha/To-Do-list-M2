@@ -1,5 +1,6 @@
 import Task from './task.js';
 import addEventListeners from './ul.js';
+import enableDragSort from './dragdrop.js';
 
 export default class ToDo {
   constructor() {
@@ -26,6 +27,8 @@ export default class ToDo {
     liElement.querySelector('.completed-checkbox').checked = task.completed;
     document.querySelector('#list').appendChild(liElement);
     liElement.querySelector('.task-description').style.textDecoration = task.completed ? 'line-through' : 'none';
+
+    (() => { enableDragSort('drag-sort-enable', this.todoList); })();
   }
 
   /* ----------Function to update indexes after remove data----------*/
@@ -45,6 +48,7 @@ export default class ToDo {
     const task = new Task(this.todoList.length + 1, description);
     this.todoList.push(task);
     localStorage.setItem('todo-list', JSON.stringify(this.todoList));
+    console.log(this.todoList);
     this.renderTask(task);
   }
 

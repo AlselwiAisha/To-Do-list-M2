@@ -35,4 +35,5 @@ window.onload = () => {
   if (todo.todoList.length > 0) {
     todo.todoList.forEach((task) => todo.renderTask(task));
   }
+  // (()=> {enableDragSort('drag-sort-enable',todo.todoList)})();
 };
