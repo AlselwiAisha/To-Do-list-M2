@@ -22,17 +22,18 @@ describe('ToDo-List: All CRUD Functionalities', () => {
                    <!--create To Do List by JavaScript -->
                </ul>
                <button id="clear-btn">Clear all completed</button>
-   </form>
-           
-   
+   </form>  
 </section>`;
+
   describe('Add new tasks', () => {
+    // Test Case 1: Check if the task is Added to the list
     test('Test ToDo-List to have 2 tasks', () => {
       todo.addTask('Task 1');
       todo.addTask('Task 2');
       expect(todo.todoList.length).toBe(2);
     });
 
+    // Test Case 2: Check if the task is Added to the localStorage
     test('Test LocalStorage to have 2 tasks', () => {
       todo.addTask('Task 3');
       todo.addTask('Task 4');
@@ -40,6 +41,7 @@ describe('ToDo-List: All CRUD Functionalities', () => {
       expect(todoList.length).toBe(4);
     });
 
+    // Test Case 3: Check if the task is Added to the DOM
     test('Test DOM to have 5 tasks', () => {
       todo.addTask('Task 5');
       const liElements = document.querySelectorAll('.draggable-item');
@@ -66,7 +68,9 @@ describe('ToDo-List: All CRUD Functionalities', () => {
       expect(liElements).toHaveLength(4);
     });
   });
+
   describe('Update task', () => {
+    // Test Case 1: Check if the task is updated in the list
     test('Test ToDo-List to have the first task updated', () => {
       const liElements = document.querySelectorAll('.draggable-item');
       liElements[0].querySelector('.task-description').value = 'Task 1 Updated';
@@ -74,18 +78,26 @@ describe('ToDo-List: All CRUD Functionalities', () => {
       updateTask(liElements[0], todo.todoList);
       expect(todo.todoList[0].description).toBe('Task 1 Updated');
       expect(todo.todoList[0].completed).toBe(true);
-    }); test('Test LocalStorage to have teh first task updated', () => {
+    });
+
+    // Test Case 2: Check if the task is updated in the localStorage
+    test('Test LocalStorage to have teh first task updated', () => {
       const todoList = JSON.parse(localStorage.getItem('todo-list'));
       expect(todoList[0].description).toBe('Task 1 Updated');
       expect(todoList[0].completed).toBe(true);
-    }); test('Test DOM to have the first task updated', () => {
+    });
+
+    // Test Case 3: Check if the task is updated in the DOM
+    test('Test DOM to have the first task updated', () => {
       const liElements = document.querySelectorAll('.draggable-item');
       const taskDescription = liElements[0].querySelector('.task-description').value;
       const taskStatus = liElements[0].querySelector('.completed-checkbox').checked;
       expect(taskDescription).toBe('Task 1 Updated');
       expect(taskStatus).toBe(true);
     });
-  }); describe('ClearAllCompleted tasks', () => {
+  });
+
+  describe('ClearAllCompleted tasks', () => {
     test('Test ToDo-List to have the completed tasks removed', () => {
       const liElements = document.querySelectorAll('.draggable-item');
       liElements[0].querySelector('.completed-checkbox').checked = true;
@@ -97,10 +109,14 @@ describe('ToDo-List: All CRUD Functionalities', () => {
       updateTask(liElements[3], todo.todoList);
       todo.clearAllCompleted();
       expect(todo.todoList.length).toBe(1);
-    }); test('Test LocalStorage to have teh first task updated', () => {
+    });
+
+    test('Test LocalStorage to have teh first task updated', () => {
       const todoList = JSON.parse(localStorage.getItem('todo-list'));
       expect(todoList.length).toBe(1);
-    }); test('Test DOM to have the first task updated', () => {
+    });
+
+    test('Test DOM to have the first task updated', () => {
       const liElements = document.querySelectorAll('.draggable-item');
       expect(liElements.length).toBe(1);
     });
