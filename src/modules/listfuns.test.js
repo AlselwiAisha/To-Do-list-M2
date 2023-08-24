@@ -1,8 +1,12 @@
+// Import the necessary modules
+
 import ToDo from './listfuns.js';
 import { updateTask } from './updatefun.js';
 
+// Create an instance of the ToDo class
 const todo = new ToDo();
 
+// Describe the test suite for ToDo List CRUD functionalities
 describe('ToDo-List: All CRUD Functionalities', () => {
   document.body.innerHTML = `<section class="container"> 
     <section class="title">
@@ -25,6 +29,7 @@ describe('ToDo-List: All CRUD Functionalities', () => {
    </form>  
 </section>`;
 
+  // Describe the 'Add new tasks' test suite
   describe('Add new tasks', () => {
     // Test Case 1: Check if the task is Added to the list
     test('Test ToDo-List to have 2 tasks', () => {
