@@ -147,3 +147,10 @@ span.drag-sort-active {
   background: transparent;
   color: transparent;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 10%;
+  }
+}
