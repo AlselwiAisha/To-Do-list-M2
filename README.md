@@ -57,7 +57,7 @@ I'm using mainly html, css and JavaScript for building this project.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> [Live Demo](https://alselwiaisha.github.io/To-Do-list-M2/dist/)
+ [Live Demo](https://alselwiaisha.github.io/To-Do-list-M2/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,8 +126,8 @@ You can deploy this project using:
 
 👤 **AishaAlsewi**
 
-- GitHub: [@githubhandle](https://github.com/AlselwiAisha)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aisha-alselwi-53a361270/)
+- GitHub: [Aisha Alselwi](https://github.com/AlselwiAisha)
+- LinkedIn: [Aisha Alselwi](https://www.linkedin.com/in/aisha-alselwi-53a361270/)
 
 
 
