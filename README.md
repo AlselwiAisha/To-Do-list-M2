@@ -28,7 +28,7 @@
 
 # 📖 [To-Do-list-M2] <a name="about-project"></a>
 
-**[To-Do-list-M2]** This project is part of my **Microverse** exercises, where we start building a **To-Do-list** application for storing a **To-Do Tasks List**. 
+**"To-Do-list"** This project is part of my **Microverse** exercises, where we start building a **To-Do-list** application for storing a **To-Do Tasks List**. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
