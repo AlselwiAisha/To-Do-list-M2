@@ -137,7 +137,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Developer_works_section]**
+- [ ] **Developer works section**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
