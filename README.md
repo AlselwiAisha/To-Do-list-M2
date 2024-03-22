@@ -79,7 +79,6 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 Example commands:
-
 ```sh
   cd my-folder
   git clone https://github.com/AlselwiAisha/To-Do-list-M2.git
@@ -108,7 +107,6 @@ To run tests, run the following command:
 ```sh
   npx stylelint "**/*.{css,scss}"
 ```
-
 ```sh
   npx eslint .
 ```
@@ -128,7 +126,6 @@ You can deploy this project using:
 
 - GitHub: [Aisha Alselwi](https://github.com/AlselwiAisha)
 - LinkedIn: [Aisha Alselwi](https://www.linkedin.com/in/aisha-alselwi-53a361270/)
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -157,7 +154,7 @@ Feel free to check the [issues page](https://github.com/AlselwiAisha/To-Do-list-
 
 If you like this project feel free to contact
 
-- GitHub: [@githubhandle](https://github.com/AlselwiAisha)
+- GitHub: [Aisha Alselwi](https://github.com/AlselwiAisha)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
